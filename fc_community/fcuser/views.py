@@ -1,6 +1,37 @@
-from django.shortcuts import render
-from django.contrib.auth.hashers import make_password
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib.auth.hashers import make_password, check_password
 from .models import Fcuser
+from .forms import LoginForm
+
+
+def home(request):
+    user_id = request.session.get('user')
+    if user_id:
+        fcuser = Fcuser.objects.get(pk=user_id)
+        return HttpResponse(fcuser.username)
+
+    return HttpResponse('Home!')
+
+
+def logout(request):
+    if request.session.get('user'):
+        del(request.session['user'])
+
+    return redirect('/')
+
+
+def login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            request.session['user'] = form.user_id
+            return redirect('/')
+    else:
+        form = LoginForm()
+
+    return render(request, 'login.html', {'form': form})
+
 
 def register(request):
     if request.method == 'GET':
