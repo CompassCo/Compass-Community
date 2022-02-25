@@ -11,7 +11,7 @@ def board_detail(request, pk):
     try:
         board = Board.objects.get(pk=pk)
     except Board.DoesNotExist:
-        raise Http404('게시글을 찾을 수 없습니다')
+        raise Http404('Unable to find the post')
 
     return render(request, 'board_detail.html', {'board': board})
 
@@ -50,7 +50,7 @@ def board_write(request):
 def board_list(request):
     all_boards = Board.objects.all().order_by('-id')
     page = int(request.GET.get('p', 1))
-    paginator = Paginator(all_boards, 2)
+    paginator = Paginator(all_boards, 10)
 
     boards = paginator.get_page(page)
     return render(request, 'board_list.html', {'boards': boards})

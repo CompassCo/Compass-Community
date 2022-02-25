@@ -1,12 +1,12 @@
 from django.db import models
 
 class Tag(models.Model):
-    name = models.CharField(max_length=32, verbose_name='태그명')
+    name = models.CharField(max_length=32, verbose_name='tag name')
     
     def __str__(self):
         return self.name
     
     class Meta:
-        db_table = 'fastcampus_tag'
-        verbose_name = '패스트캠퍼스 태그'
-        verbose_name_plural = '패스트캠퍼스 태그'
+        db_table = 'compass_tag'
+        verbose_name = 'Compass tag'
+        verbose_name_plural = 'Compass tags'

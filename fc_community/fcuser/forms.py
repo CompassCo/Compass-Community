@@ -3,22 +3,22 @@ from .models import Fcuser
 from django.contrib.auth.hashers import check_password
 
 class LoginForm(forms.Form):
-    username = forms.CharField(error_messages={'required': '아이디를 입력하세요'}, max_length=32, label="사용자 이름")
-    password = forms.CharField(error_messages={'required': '비밀번호를 입력하세요'}, widget=forms.PasswordInput, label="비밀번호")
+    useremail = forms.CharField(error_messages={'required': 'Please enter your email address'}, max_length=32, label="Enter email address")
+    password = forms.CharField(error_messages={'required': 'Please enter your password'}, widget=forms.PasswordInput, label="Enter password")
 
     def clean(self):
         cleaned_data = super().clean()
-        username = cleaned_data.get('username')
+        useremail = cleaned_data.get('useremail')
         password = cleaned_data.get('password')
 
-        if username and password:
+        if useremail and password:
             try:
-                fcuser = Fcuser.objects.get(username=username)
+                fcuser = Fcuser.objects.get(useremail=useremail)
             except Fcuser.DoesNotExist:
-                self.add_error('username', '아이디가 없습니다')
+                self.add_error('useremail', 'There is no email address registered')
                 return
                 
             if not check_password(password, fcuser.password):
-                self.add_error('password', '비밀번호가 틀렸습니다')
+                self.add_error('password', 'Incorrect password')
             else:
                 self.user_id = fcuser.id

@@ -35,19 +35,23 @@ def register(request):
         return render(request, 'register.html')
     elif request.method == 'POST':
         username = request.POST.get('username', None)
+        firstname = request.POST.get('firstname', None)
+        lastname = request.POST.get('lastname', None)
         useremail = request.POST.get('useremail', None)
         password = request.POST.get('password', None)
         re_password = request.POST.get('re-password', None)
 
         res_data = {}
 
-        if not (username and useremail and password and re_password):
-            res_data['error'] = '모든 값을 입력해야 합니다!'
+        if not (username and firstname and lastname and useremail and password and re_password):
+            res_data['error'] = 'You are missing some required fields!'
         elif password != re_password:
-            res_data['error'] = '비밀번호가 다릅니다!'
+            res_data['error'] = 'The passwords you entered do not match!'
         else: 
             fcuser = Fcuser(
                 username = username,
+                firstname = firstname,
+                lastname = lastname,
                 useremail = useremail,
                 password = make_password(password)
             )
