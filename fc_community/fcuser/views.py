@@ -55,7 +55,7 @@ def register(request):
                 useremail = useremail,
                 password = make_password(password)
             )
-
             fcuser.save()
+            return redirect('/fcuser/login')
 
         return render(request, 'register.html', res_data)
