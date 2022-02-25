@@ -7,9 +7,9 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>제목</th>
-                    <th>아이디</th>
-                    <th>날짜</th>
+                    <th>Title</th>
+                    <th>Writer</th>
+                    <th>Written Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,11 +31,11 @@
             <ul class="pagination justify-content-center">
                 {% if boards.has_previous %}
                 <li class="page-item">
-                    <a href="?p={{ boards.previous_page_number }}" class="page-link">이전으로</a>
+                    <a href="?p={{ boards.previous_page_number }}" class="page-link">Back</a>
                 </li>
                 {% else %}
                 <li class="page-item disabled">
-                    <a href="#" class="page-link disabled">이전으로</a>
+                    <a href="#" class="page-link disabled">Back</a>
                 </li>
                 {% endif %}
                 <li class="page-item" active>
@@ -43,11 +43,11 @@
                 </li>
                 {% if boards.has_next %}
                 <li class="page-item">
-                    <a href="?p={{ boards.next_page_number }}" class="page-link">다음으로</a>
+                    <a href="?p={{ boards.next_page_number }}" class="page-link">Next</a>
                 </li>
                 {% else %}
                 <li class="page-item disabled">
-                    <a href="#" class="page-link disabled">다음으로</a>
+                    <a href="#" class="page-link disabled">Next</a>
                 </li>
                 {% endif %}
             </ul>
@@ -56,7 +56,7 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <br /><button class="btn btn-primary" onclick="location.href='/board/write/'">글쓰기</button>
+        <br /><button class="btn btn-primary" onclick="location.href='/board/write/'">POST</button>
     </div>
 </div>
 {% endblock %}
