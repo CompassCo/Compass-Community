@@ -53,5 +53,3 @@ ver 0. (2022/02/19 ~ present)
   * Home section design
   * User registration
   * Q&A board, posts, and comments
-
-Deployment using Pythonanywhere: [siwonkim1108_pythonanywhere](http://siwonkim1108.pythonanywhere.com/)
