@@ -4,6 +4,7 @@ html, body {
 }
 .container {
     max-width: 100%;
+    padding: 0px;
 }
 .row {
     margin: 10px;
@@ -58,7 +59,7 @@ p {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 15px;
+    margin: auto;
     padding: 0px;
 }
 .card-img-top {
@@ -66,14 +67,15 @@ p {
     height: 200px;
     object-fit: cover;
 }
-
 .col-sm-6 {
     width: 450px;
     margin: 10px;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    margin: auto;
 }
 .board {
     box-sizing: border-box;
