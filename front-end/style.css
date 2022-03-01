@@ -1,38 +1,20 @@
-html, body {
+body {
     margin: 0px;
     padding: 0px;
 }
-.container {
-    max-width: 100%;
+header {
+    font-family: 'Bungee', cursive;
 }
-.row {
-    margin: 10px;
+.bi-compass {
+    margin: 5px;
 }
-.nav-link {
+.nav-item {
     margin-left: 10px;
     margin-right: 10px;
 }
-i {
-    margin: 5px;
-}
-nav {
-    font-family: 'Bungee', cursive;
-}
-p {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-.btn {
-    font-family: 'Bungee', cursive;
-    font-size: 10px;
-    font-weight: 150;
-}
-.section-title {
-    font-family: 'Bungee', cursive;
-    margin-bottom: 20px;
-}
-.btn-primary {
-    background-color: #5C755E;
+.container {
+    max-width: 100%;
+    margin-bottom: 60px;
 }
 #hero-section {
     background-image: url("https://www.sdln.net/wp-content/uploads/2018/09/article-9.jpg");
@@ -47,17 +29,23 @@ p {
     padding-bottom: 200px;
 }
 #story-section, #qna-section {
-    margin-top: 60px;
-    margin-bottom: 100px;
-    width: 80%;
+    width: 90%;
+}
+.section-title {
+    font-family: 'Bungee', cursive;
+    margin: 30px;
+}
+p {
+    padding: 10px;
+}
+.row {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 .card {
     width: 300px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
     margin: 15px;
     padding: 0px;
 }
@@ -66,19 +54,24 @@ p {
     height: 200px;
     object-fit: cover;
 }
-
 .col-sm-6 {
     width: 450px;
-    margin: 10px;
+    margin: 5px;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
-.board {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
+.btn {
+    font-family: 'Bungee', cursive;
+    font-size: 12px;
+}
+.btn-primary{
+    background-color: #5C755E;
+    border: none;
+    color: #fff; 
+}
+.btn-primary:hover {
+    color: #5C755E;
+    border: #5C755E solid 1px;
+    background-color: #fff;
 }
 footer {
     height: 150px;
