@@ -42,7 +42,7 @@ ver 0. (2022/02/19 ~ present)
 * BE
   * Python
   * Django
-  * Flask
+  * Django Rest Framework
 
 ## 👨‍💻 FE & BE Role
 * FE - Hyunjung Lee
